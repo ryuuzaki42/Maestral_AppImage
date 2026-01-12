@@ -44,8 +44,13 @@ jobs:
         cd squashfs-root/opt/python3*/bin/
         pwd; ls -lah
 
-        ./pip3.* install --upgrade 'maestral[gui]'
-        ./python3.* -m pip install --upgrade pip
+        ./pip3* install --upgrade pip
+
+        # Version above 6.9.1 do not install in GLIBC 2.33
+        # https://pypi.org/project/PyQt6/#history
+        ./pip3 install pyqt6==6.9.1
+
+        ./pip3 install --upgrade 'maestral[gui]'
 
     - name: Make AppImage
       run: |
