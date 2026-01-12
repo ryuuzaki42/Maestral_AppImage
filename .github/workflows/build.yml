@@ -48,7 +48,8 @@ jobs:
 
         # Version above 6.9.1 do not install in GLIBC 2.33
         # https://pypi.org/project/PyQt6/#history
-        ./pip3 install pyqt6==6.9.1
+        #./pip3 install pyqt6==6.9.1
+        ./pip3 install pyqt6==6.10.1
 
         ./pip3 install --upgrade 'maestral[gui]'
 
