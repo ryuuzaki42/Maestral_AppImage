@@ -20,7 +20,7 @@ jobs:
 
     - name: Get appimagetool
       run: |
-        set -x        
+        set -x
         #wget -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         version_go_appimage=$(wget -q -O - https://api.github.com/repos/probonopd/go-appimage/releases | grep "\"name.*appimagetool-.*-x86_64.AppImage\"" | head -n 1 | cut -d '-' -f2)
         echo "version_go_appimage: $version_go_appimage"
@@ -28,7 +28,7 @@ jobs:
         chmod +x appimagetool-x86_64.AppImage
         pwd; ls -lah
 
-    - name: Get Pyhton AppImage
+    - name: Get Python AppImage
       run: |
         set -x
         #wget https://github.com/niess/python-appimage/releases/download/python3.12/python3.12.3-cp312-cp312-manylinux_2_28_x86_64.AppImage
@@ -46,10 +46,9 @@ jobs:
 
         ./pip3* install --upgrade pip
 
-        # Version above 6.9.1 do not install in GLIBC 2.33
+        # Version above 6.9.1 do not install with GLIBC 2.33
         # https://pypi.org/project/PyQt6/#history
-        #./pip3 install pyqt6==6.9.1
-        ./pip3 install pyqt6==6.10.1
+        ./pip3 install pyqt6==6.9.1
 
         ./pip3 install --upgrade 'maestral[gui]'
 
