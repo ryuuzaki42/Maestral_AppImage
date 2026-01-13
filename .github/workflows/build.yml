@@ -46,7 +46,7 @@ jobs:
 
         ./pip3* install --upgrade pip
 
-        # Version above 6.9.1 do not install with GLIBC 2.33
+        # PyQt6 - version above 6.9.1 do not install with GLIBC 2.33
         # https://pypi.org/project/PyQt6/#history
         ./pip3 install pyqt6==6.9.1
 
